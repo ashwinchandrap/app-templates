@@ -54,6 +54,7 @@
     <value>{
     "separator": "|",
     "quoteChar": "\"",
+    "lineDelimiter": "",
     "fields": [
         {
             "name": "accountNumber",
@@ -72,8 +73,55 @@
   </value>
   </property>
   <property>
+    <name>dt.operator.formatter.prop.schema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "lineDelimiter": "",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      },
+      {
+      "name": "name2",
+      "type": "String"
+      }
+      ]
+      }
+    </value>
+  </property>
+  <property>
     <name>dt.attr.TUPLE_CLASS</name>
     <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent1</value>
+  </property>
+  <property>
+    <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent1</value>
+  </property>
+  <property>
+    <name>dt.operator.transform.prop.expressionMap(name2)</name>
+    <value>{$.name}</value>
+  </property>
+  <property>
+    <name>dt.operator.transform.prop.expressionMap(name)</name>
+    <value>{$.name}.toUpperCase()</value>
+  </property>
+  <property>
+    <name>dt.operator.transform.prop.expressionMap(amount)</name>
+    <value>{$.amount} * 2</value>
   </property>
 </configuration>
 

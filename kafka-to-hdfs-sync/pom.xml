@@ -15,10 +15,10 @@
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
-    <apex.version>3.6.0-dt20161215</apex.version>
+    <apex.version>3.6.0-SNAPSHOT</apex.version>
     <malhar.version>3.5.0</malhar.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
-    <skipTests>true</skipTests>
+    <skipTests>false</skipTests>
     <apex.apppackage.tags>app-template, hdfs, kafka, sync</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
   </properties>
@@ -81,7 +81,7 @@
                </descriptors>
                <archiverConfig>
                  <defaultDirectoryMode>0755</defaultDirectoryMode>
-               </archiverConfig>                  
+               </archiverConfig>
                <archive>
                  <manifestEntries>
                    <Class-Path>${apex.apppackage.classpath}</Class-Path>
@@ -250,9 +250,9 @@
           <artifactId>*</artifactId>
         </exclusion>
       </exclusions>
-      
+
     </dependency>
-    
+
     <dependency>
       <groupId>org.apache.apex</groupId>
       <artifactId>malhar-kafka</artifactId>
@@ -287,7 +287,7 @@
       <version>${apex.version}</version>
       <scope>test</scope>
     </dependency>
-    
+
 
     <dependency>
       <groupId>org.apache.kafka</groupId>
@@ -305,7 +305,7 @@
       <artifactId>janino</artifactId>
       <version>2.7.8</version>
     </dependency>
-    
+
     <dependency>
       <groupId>info.batey.kafka</groupId>
       <artifactId>kafka-unit</artifactId>
